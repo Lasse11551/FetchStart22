@@ -43,29 +43,6 @@ async function postObjectAsJson(url, object, httpVerbum) {
     return response
 }
 
-async function postObjectAsJsonxx(url, Kommune) {
-    const objectAsJsonString = JSON.stringify(Kommune)
-    console.log(objectAsJsonString)
-    const fetchOptions = {
-        method: "POST",
-        headers: {
-            "Content-type": "application/Json",
-        },
-        body: objectAsJsonString
-    }
-
-    const response = await fetch(url, fetchOptions);
-
-    if(!response.ok) {
-        const errorMessage = await response.text();
-        throw new Error(errorMessage);
-    } else {
-        alert("Kommune saved")
-    }
-
-    return response
-}
-
 function actionPostKommune() {
     postKommune();
 }
